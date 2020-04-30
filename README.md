@@ -1,3 +1,3 @@
-# Node Boilerplate
+# Telemetry
 
-Node Boilerplate for A2r TypeScript Projects
+Telemetry library for the a2r ecosystem
