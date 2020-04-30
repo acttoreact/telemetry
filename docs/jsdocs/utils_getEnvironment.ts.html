@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: utils/getEnvironment.ts</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -52,8 +54,8 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Title</p>
-                        <h1>Home</h1>
+                        <p>Source</p>
+                        <h1>utils/getEnvironment.ts</h1>
                     </header>
 
                     
@@ -61,31 +63,32 @@
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h1>Telemetry</h1>
-<p><a href="https://travis-ci.org/acttoreact/telemetry"><img src="https://travis-ci.org/acttoreact/telemetry.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/github/acttoreact/telemetry"><img src="https://coveralls.io/repos/github/acttoreact/telemetry/badge.svg?branch=master" alt="Coverage Status"></a> <a href="https://www.npmjs.com/package/@a2r/telemetry"><img src="https://img.shields.io/bundlephobia/minzip/@a2r/telemetry" alt="npm bundle size"></a> <a href="https://www.npmjs.com/package/@a2r/telemetry"><img src="https://img.shields.io/npm/v/@a2r/telemetry" alt="npm"></a> <a href="https://www.npmjs.com/package/@a2r/telemetry"><img src="https://img.shields.io/node/v/@a2r/telemetry" alt="node-current"></a> <a href="https://github.com/acttoreact/telemetry/blob/develop/license.md"><img src="https://img.shields.io/github/license/acttoreact/telemetry" alt="GitHub"></a> <a href="https://htmlpreview.github.io/?https://github.com/acttoreact/telemetry/blob/develop/docs/jsdocs/index.html#readDir"><img src="https://img.shields.io/badge/documentation-ready-green" alt="Documentation"></a></p>
-<p>Telemetry library for the a2r ecosystem</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>let forceSpecificEnvironment: string;
+
+/**
+ * Allows you force an specific environment
+ * @param {string} environment Environment to force: development, production, etc.
+ */
+export const setForceSpecificEnvironment = (environment: string): void => {
+  forceSpecificEnvironment = environment;
+};
+
+/**
+ * Gets the current node environment
+ * @returns {string} current node environment
+ */
+const getEnvironment = (): string => {
+  if (forceSpecificEnvironment) {
+    return forceSpecificEnvironment;
+  }
+  return process.env.NODE_ENV;
+};
+
+export default getEnvironment;</code></pre>
+        </article>
     </section>
-
-
 
 
 
