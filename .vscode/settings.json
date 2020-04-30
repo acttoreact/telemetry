@@ -8,6 +8,7 @@
     "lcov",
     "plusplus",
     "respawn",
+    "snyk",
     "sourcemap",
     "tslib"
   ]

@@ -1,6 +1,6 @@
 {
   "name": "@a2r/telemetry",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Telemetry library for the A2R Framework",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -44,10 +44,10 @@
   "homepage": "https://a2r.com/",
   "dependencies": {
     "chalk": "^4.0.0",
-    "winston": "^3.2.1",
-    "snyk": "^1.316.1"
+    "winston": "^3.2.1"    
   },
   "devDependencies": {
+    "snyk": "^1.316.1",
     "typescript": "^3.5.3",
     "@types/jest": "^25.1.1",
     "@types/node": "^13.13.4",
