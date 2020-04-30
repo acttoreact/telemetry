@@ -1,5 +1,5 @@
 {
-  "name": "a2r-telemetry",
+  "name": "@a2r/telemetry",
   "version": "1.0.1",
   "description": "Telemetry library for the A2R Framework",
   "main": "./dist/index.js",
