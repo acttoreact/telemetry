@@ -11,6 +11,9 @@
     "prettier/@typescript-eslint"
   ],
   "settings": {
+    "react": {
+      "version": "999.999.999"
+    },
     "import/extensions": [
       ".js",
       ".jsx",
@@ -60,6 +63,6 @@
     "@typescript-eslint/no-use-before-define": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-namespace-keyword": "error",
-    "@typescript-eslint/type-annotation-spacing": "error",
+    "@typescript-eslint/type-annotation-spacing": "error"
   }
 }
