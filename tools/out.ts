@@ -1,5 +1,6 @@
 import chalk from 'chalk';
 import winston, { format } from 'winston';
+import getEnvironment from '../utils/getEnvironment';
 
 /**
  * Used during the transformation pipeline
@@ -18,7 +19,7 @@ interface TransformableInfo {
 /**
  * Log level options (in order of relevance)
  */
-type LogLevel = 'error'|'warn'|'info'|'verbose'|'debug';
+type LogLevel = 'error' | 'warn' | 'info' | 'verbose' | 'debug';
 
 /**
  * Function removes the colors for the message
@@ -53,33 +54,43 @@ const transports = [
   }),
 ];
 
+let defaultLogLevel = 'info';
+
 /**
  * Set the default level depending of the environment:
- * verbose for development and info por production 
+ * verbose for development and info por production
  */
-const defaultLevel =
-  process.env.NODE_ENV === 'development' ? 'verbose' : 'info';
+export const resetDefaultLogLevel = (): void => {
+  defaultLogLevel = getEnvironment() === 'development' ? 'verbose' : 'info';
+};
+
+resetDefaultLogLevel();
 
 /**
  * Create the winston logger
  */
 const logger = winston.createLogger({
-  level: defaultLevel,
+  level: defaultLogLevel,
   format: format.json(),
   transports,
 });
 
-/**
- * If we're not in production then log to the `console` with the format:
- * `${info.level}: ${info.message} JSON.stringify({ ...rest })`
- */
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(
-    new winston.transports.Console({
-      format: winston.format.simple(),
-    }),
-  );
-}
+export const configForCurrentEnvironment = (): void => {
+  /**
+   * If we're not in production then log to the `console` with the format:
+   * `${info.level}: ${info.message} JSON.stringify({ ...rest })`
+   */
+  if (getEnvironment() !== 'production') {
+    logger.add(
+      new winston.transports.Console({
+        format: winston.format.simple(),
+      }),
+    );
+  }
+};
+
+configForCurrentEnvironment();
+
 /**
  * Prefix to delete previous chars
  */
