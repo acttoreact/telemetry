@@ -121,4 +121,3 @@ exports.verbose = (message, meta) => {
 exports.setLevel = (level) => {
     logger.level = level;
 };
-//# sourceMappingURL=out.js.map

@@ -14,4 +14,3 @@ const outLibrary = __importStar(require("./tools/out"));
 const package_json_1 = __importDefault(require("./package.json"));
 exports.out = outLibrary;
 exports.version = package_json_1.default.version;
-//# sourceMappingURL=index.js.map

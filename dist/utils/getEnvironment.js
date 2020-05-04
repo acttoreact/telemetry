@@ -19,4 +19,3 @@ const getEnvironment = () => {
     return process.env.NODE_ENV;
 };
 exports.default = getEnvironment;
-//# sourceMappingURL=getEnvironment.js.map
