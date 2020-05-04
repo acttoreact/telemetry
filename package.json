@@ -1,11 +1,11 @@
 {
   "name": "@a2r/telemetry",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Telemetry library for the A2R Framework",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/"
   ],
   "engines": {
     "node": ">=12"
