@@ -41,7 +41,7 @@
   "homepage": "https://a2r.com/",
   "dependencies": {
     "chalk": "^4.0.0",
-    "winston": "^3.2.1"
+    "winston": "^3.3.1"
   },
   "devDependencies": {
     "snyk": "^1.316.1",
