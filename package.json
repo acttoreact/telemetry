@@ -1,9 +1,9 @@
 {
   "name": "@a2r/telemetry",
-  "version": "1.0.30",
+  "version": "1.0.35",
   "description": "Telemetry library for the A2R Framework",
   "main": "./index.js",
-  "types": "./index.d.ts",  
+  "types": "./index.d.ts",
   "engines": {
     "node": ">=12"
   },
@@ -23,7 +23,7 @@
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test-full": "npm run test-clear;npm run build;npm run test;npm run test-coverage;npm run lint;npm audit;npm run docs",
     "docs": "jsdoc -c jsdoc.json",
-    "snyk-protect": "snyk protect",    
+    "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"
   },
   "repository": {
