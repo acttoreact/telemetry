@@ -1,6 +1,6 @@
 {
   "name": "@a2r/telemetry",
-  "version": "1.0.35",
+  "version": "1.0.40",
   "description": "Telemetry library for the A2R Framework",
   "main": "./index.js",
   "types": "./index.d.ts",
