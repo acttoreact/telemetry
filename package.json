@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "rm -rf ./dist;tsc",
-    "dev": "NODE_ENV=development ts-node-dev --debug --respawn --transpileOnly ./index.ts",
+    "dev": "NODE_ENV=development ts-node ./index.ts",
     "upload": "npm run build;cp .snyk ./dist/.snyk;cd dist;npm i;npm publish --access=public;",
     "docker-build": "IMAGE=$npm_package_name:latest;docker build --rm --pull -f \"./Dockerfile\" -t $IMAGE \".\"",
     "docker-start": "IMAGE=$npm_package_name:latest;docker run -it -v $INIT_CWD/server:/usr/src/app/server $IMAGE",
@@ -21,10 +21,7 @@
     "test-coverage": "jest --coverage",
     "test-coverage-dev": "NODE_ENV=development jest --coverage --watchAll",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "test-full": "npm run test-clear;npm run build;npm run test;npm run test-coverage;npm run lint;npm audit;npm run docs",
-    "docs": "jsdoc -c jsdoc.json",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "test-full": "npm run test-clear;npm run build;npm run test;npm run test-coverage;npm run lint;npm audit"
   },
   "repository": {
     "type": "git",
@@ -46,7 +43,6 @@
     "@typescript-eslint/parser": "^3.10.1",
     "acorn": "^7.4.1",
     "babel-jest": "^26.6.3",
-    "better-docs": "^2.3.2",
     "chalk": "^4.1.0",
     "coveralls": "^3.1.0",
     "eslint": "^7.22.0",
@@ -56,13 +52,10 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "jest": "^26.6.3",
-    "jsdoc": "^3.6.6",
-    "snyk": "^1.573.0",
     "ts-jest": "^26.5.3",
-    "ts-node-dev": "^1.1.6",
+    "ts-node": "^10.0.0",
     "typescript": "^3.9.9",
     "winston": "^3.3.3"
   },
-  "devDependencies": {},
-  "snyk": true
+  "devDependencies": {}
 }
